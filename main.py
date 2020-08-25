@@ -62,10 +62,4 @@ class TOHOTP:
                 return True
         return False
 
-secret =  b"Hello there sunshine"
-totpgen = TOHOTP(digits= 6, digestmod="sha512")
-code = (totpgen.totp(secret))
-print(totpgen.verify(secret, code))
-
-
 
