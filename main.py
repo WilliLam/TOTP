@@ -32,7 +32,7 @@ class TOHOTP:
 
 
 
-    def totp(self,  k, window= 30, digits = 10):
+    def totp(self,  k, window= 30):
         """
         based on https://tools.ietf.org/html/rfc6238#page-4
         secret string : key to generate password from
@@ -63,7 +63,7 @@ class TOHOTP:
         return False
 
 secret =  b"Hello there sunshine"
-totpgen = TOHOTP(digits= 10, digestmod="sha512")
+totpgen = TOHOTP(digits= 6, digestmod="sha512")
 code = (totpgen.totp(secret))
 print(totpgen.verify(secret, code))
 
